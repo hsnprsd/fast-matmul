@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "immintrin.h": "c",
+        "pthread.h": "c",
+        "assert.h": "c"
+    }
+}

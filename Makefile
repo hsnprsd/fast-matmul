@@ -1,7 +1,9 @@
 .PHONY: bench
 
-compile: main.c
-	gcc -march=native -O1 main.c
+ITER=0
 
-bench: compile
+all: compile
 	./a.out
+
+compile: ${ITER}.c
+	gcc -march=native -O2 ${ITER}.c

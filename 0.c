@@ -1,16 +1,10 @@
-#define _GNU_SOURCE
-
-#include <stdlib.h>
 #include <stdio.h>
-#include <immintrin.h>
-#include <assert.h>
-#include <pthread.h>
-#include <time.h>
 #include <sys/time.h>
+#include <string.h>
 
 // #define DEBUG 1
 
-#define N 512
+#define N 2048
 #define NRUNS 10
 
 float A[N][N];
@@ -47,6 +41,8 @@ int main()
         avg += diff;
 
         printf("%.2f\n", diff);
+
+        if (run != NRUNS - 1) memset(C, 0, sizeof(C));
     }
 
     avg /= NRUNS;

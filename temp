@@ -1,0 +1,18 @@
+    1220:       c5 fc 28 10             vmovaps (%rax),%ymm2
+    1224:       c5 fc 28 58 20          vmovaps 0x20(%rax),%ymm3
+    1229:       48 83 c0 40             add    $0x40,%rax
+    122d:       c4 e2 6d b8 0a          vfmadd231ps (%rdx),%ymm2,%ymm1
+    1232:       c4 e2 65 b8 42 20       vfmadd231ps 0x20(%rdx),%ymm3,%ymm0
+    1238:       48 83 c2 40             add    $0x40,%rdx
+    123c:       48 39 c1                cmp    %rax,%rcx
+    123f:       75 df                   jne    1220 <main+0x140>
+
+
+
+    1220:       c4 e2 7d b8 d9          vfmadd231ps %ymm1,%ymm0,%ymm3
+    1225:       c5 fc 28 0c 02          vmovaps (%rdx,%rax,1),%ymm1
+    122a:       c5 fc 28 04 01          vmovaps (%rcx,%rax,1),%ymm0
+    122f:       48 83 c0 20             add    $0x20,%rax
+    1233:       c4 e2 7d b8 d1          vfmadd231ps %ymm1,%ymm0,%ymm2
+    1238:       48 3d 20 10 00 00       cmp    $0x1020,%rax
+    123e:       75 e0                   jne    1220 <main+0x140>
